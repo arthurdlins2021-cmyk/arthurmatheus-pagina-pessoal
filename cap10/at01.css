@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Estilos Globais & Variáveis (Mobile-First)
+   ========================================================================== */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #191414;
+    --primary-color: #1ED760; /* Verde Spotify */
+    --card-bg: #f8f9fa;
+}
+
+/* Suporte Obrigatório a Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --card-bg: #181818;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Tipografia Fluida Obrigatória com clamp */
+h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Imagens Responsivas Padrão */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================================================
+   Layout Base (Celular)
+   ========================================================================== */
+.main-header {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    text-align: center; /* Detalhe simples: centraliza no mobile antes de aplicar o flex */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #2D46B9; /* Azul clássico */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: black;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+/* Seção de Conteúdo e Cards */
+.content-section {
+    padding: 40px 20px;
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Mobile: Cards empilhados (1 coluna) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd; 
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #000000;
+    color: #b3b3b3;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   Breakpoints Responsivos (Mínimo de 3 exigidos)
+   ========================================================================== */
+
+/* 1. Breakpoint: Tablets (768px) */
+@media (min-width: 768px) {
+    .main-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+    }
+
+    .nav-menu ul {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* Divide em duas colunas */
+    }
+}
+
+/* 2. Breakpoint: Desktops (1024px) */
+@media (min-width: 1024px) {
+    .hero-section {
+        padding: 100px 40px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr); /* Divide nas 3 colunas finais */
+    }
+    
+    .content-section {
+        max-width: 1200px;
+        margin: 0 auto; 
+    }
+}
+
+/* 3. Breakpoint: Telas Grandes (1440px) */
+@media (min-width: 1440px) {
+    /* Pequeno ajuste de respiro para somar o 3º breakpoint */
+    .hero-section {
+        padding: 140px 20px;
+    }
+}
