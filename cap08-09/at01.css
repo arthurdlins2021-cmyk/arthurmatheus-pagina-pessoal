@@ -1,0 +1,159 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
+   ========================================================================== */
+:root {
+    --bg-main: #0a0a0c;        /* Fundo bem escuro */
+    --bg-card: #121217;        /* Fundo dos blocos internos */
+    --neon-cyan: #00f3ff;      /* Ciano Neon */
+    --neon-magenta: #ff0055;   /* Magenta Neon */
+    --text-color: #e0e0e6;     /* Texto claro */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Tipografia hacker/cyberpunk */
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+/* ==========================================================================
+   ESTRUTURA PRINCIPAL (CSS GRID)
+   ========================================================================== */
+.page-wrapper {
+    display: grid;
+    /* Configuração de grid simples para mobile e desktop */
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%; /* Repetição desnecessária que alunos costumam colocar */
+}
+
+/* ==========================================================================
+   INTRODUÇÃO E CABEÇALHO (FLEXBOX)
+   ========================================================================== */
+.intro {
+    background-color: var(--bg-card);
+    border: 2px solid var(--neon-cyan);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+    
+    /* Uso do Flexbox exigido pelo professor */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header h1 {
+    color: var(--neon-magenta);
+    font-size: 2.8rem;
+    text-shadow: 2px 2px #000;
+}
+
+header h2 {
+    color: var(--neon-cyan);
+    font-size: 1.4rem;
+    margin-top: 5px;
+}
+
+/* Efeito Hover simples nos links */
+a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 5px var(--neon-magenta);
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL (CSS GRID INTERNO)
+   ========================================================================== */
+.supporting {
+    display: grid;
+    /* Um erro sutil de consistência: definindo em 1 coluna manualmente para mobile */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+}
+
+/* Estilização padrão para todos os blocos de artigos */
+.explanation, .participation, .benefits, .requirements {
+    background-color: var(--bg-card);
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+/* Destacando os títulos dos blocos com cores alternadas */
+.supporting h3 {
+    color: var(--neon-cyan);
+    margin-bottom: 12px;
+}
+
+/* Footer interno do bloco main usando Flexbox */
+.supporting footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background: #1a1a24;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   BARRA LATERAL (SIDEBAR)
+   ========================================================================== */
+.sidebar {
+    background-color: var(--bg-card);
+    border: 2px dashed var(--neon-magenta);
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.sidebar h3 {
+    color: var(--neon-magenta);
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar li {
+    padding: 8px;
+    background: #181822;
+    border-left: 3px solid var(--neon-cyan);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Breakpoint para telas maiores (Desktop) */
+@media (min-width: 768px) {
+    .page-wrapper {
+        /* Transforma a estrutura geral em duas colunas: conteúdo e sidebar */
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .supporting {
+        /* Distribui os 4 blocos de conteúdo em um grid de 2 colunas */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Erro bobo de iniciante: redefinir o display flex desnecessariamente dentro da media query */
+    .intro {
+        display: flex; 
+    }
+}
