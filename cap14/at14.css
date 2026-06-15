@@ -1,0 +1,100 @@
+/* Estilo geral */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+    color: #333;
+}
+
+/* Cabeçalho */
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #004080;
+}
+
+/* Seções */
+
+section {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Perfil */
+
+#perfil {
+    text-align: center;
+}
+
+#fotoPerfil {
+    border-radius: 10px;
+}
+
+/* Botões */
+
+button {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0066cc;
+}
+
+/* Campos */
+
+input,
+select {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Classe usada para destacar perfil */
+
+.destaque {
+    border: 3px solid gold;
+    background-color: #fff8cc;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* Tema escuro */
+
+.temaEscuro {
+    background-color: #222;
+    color: white;
+}
+
+.temaEscuro section {
+    background-color: #333;
+}
+
+/* Tema azul */
+
+.temaAzul {
+    background-color: #dceeff;
+}
+
+.temaAzul section {
+    background-color: #bcdcff;
+}
+
+/* Rodapé */
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
