@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Formulário de Inscrição</h1>
+
+    <form id="formCadastro" novalidate>
+
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+
+            <div class="campo">
+                <label for="nome">Nome completo</label>
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome completo"
+                    required
+                    minlength="3"
+                    maxlength="100">
+                <small class="erro" id="erroNome"></small>
+            </div>
+
+            <div class="campo">
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="email@exemplo.com"
+                    required>
+                <small class="erro" id="erroEmail"></small>
+            </div>
+
+            <div class="campo">
+                <label for="telefone">Telefone</label>
+                <input
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="(82) 99999-9999"
+                    required>
+                <small class="erro" id="erroTelefone"></small>
+            </div>
+
+            <div class="campo">
+                <label for="dataNascimento">Data de nascimento</label>
+                <input
+                    type="date"
+                    id="dataNascimento"
+                    name="dataNascimento"
+                    required>
+                <small class="erro" id="erroData"></small>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>Curso</legend>
+
+            <div class="campo">
+                <label for="curso">Curso</label>
+
+                <select id="curso" name="curso" required>
+
+                    <option value="">Selecione</option>
+                    <option>Informática</option>
+                    <option>Administração</option>
+                    <option>Edificações</option>
+                    <option>Eletrotécnica</option>
+                    <option>Enfermagem</option>
+
+                </select>
+
+                <small class="erro" id="erroCurso"></small>
+
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>Turno</legend>
+
+            <label>
+                <input type="radio" name="turno" value="Manhã">
+                Manhã
+            </label>
+
+            <label>
+                <input type="radio" name="turno" value="Tarde">
+                Tarde
+            </label>
+
+            <label>
+                <input type="radio" name="turno" value="Noite">
+                Noite
+            </label>
+
+            <small class="erro" id="erroTurno"></small>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>Áreas de Interesse</legend>
+
+            <label>
+                <input type="checkbox" name="interesse" value="Programação">
+                Programação
+            </label>
+
+            <label>
+                <input type="checkbox" name="interesse" value="Robótica">
+                Robótica
+            </label>
+
+            <label>
+                <input type="checkbox" name="interesse" value="Design">
+                Design
+            </label>
+
+            <label>
+                <input type="checkbox" name="interesse" value="Redes">
+                Redes
+            </label>
+
+            <label>
+                <input type="checkbox" name="interesse" value="Banco de Dados">
+                Banco de Dados
+            </label>
+
+            <small class="erro" id="erroInteresses"></small>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>Segurança</legend>
+
+            <div class="campo">
+
+                <label for="senha">Senha</label>
+
+                <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    required
+                    minlength="8"
+                    placeholder="Digite sua senha">
+
+                <button type="button" id="mostrarSenha">
+                    Mostrar
+                </button>
+
+                <div id="forcaSenha"></div>
+
+                <small class="erro" id="erroSenha"></small>
+
+            </div>
+
+            <div class="campo">
+
+                <label for="confirmarSenha">
+                    Confirmar senha
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmarSenha"
+                    name="confirmarSenha"
+                    required>
+
+                <small class="erro" id="erroConfirmarSenha"></small>
+
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>Foto</legend>
+
+            <label for="foto">
+                Foto (opcional)
+            </label>
+
+            <input
+                type="file"
+                id="foto"
+                accept=".jpg,.jpeg,.png">
+
+            <img
+                id="preview"
+                alt="Pré-visualização da imagem">
+
+            <small class="erro" id="erroFoto"></small>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>Mensagem</legend>
+
+            <textarea
+                id="mensagem"
+                rows="8"
+                required
+                minlength="50"
+                maxlength="500"
+                placeholder="Escreva uma mensagem"></textarea>
+
+            <p>
+                Caracteres:
+                <span id="contadorMensagem">0</span>/500
+            </p>
+
+            <small class="erro" id="erroMensagem"></small>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>Termos</legend>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="termos"
+                    required>
+
+                Aceito os termos de uso.
+
+            </label>
+
+            <small class="erro" id="erroTermos"></small>
+
+        </fieldset>
+
+        <div class="botoes">
+
+            <button type="submit">
+                Enviar
+            </button>
+
+            <button type="reset">
+                Limpar
+            </button>
+
+        </div>
+
+    </form>
+
+    <script src="js/util.js"></script>
+    <script src="js/validacoes.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
