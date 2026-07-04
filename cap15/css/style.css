@@ -1,0 +1,245 @@
+/* ===========================
+   ESTILO GERAL
+=========================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #f4f6f8;
+    padding: 40px;
+}
+
+h1{
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* ===========================
+   FORMULÁRIO
+=========================== */
+
+form{
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
+}
+
+fieldset{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+legend{
+    font-weight: bold;
+    padding: 0 10px;
+    color: #0d6efd;
+}
+
+/* ===========================
+   CAMPOS
+=========================== */
+
+.campo{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+label{
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+input,
+select,
+textarea{
+
+    width: 100%;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    transition: .3s;
+}
+
+textarea{
+    resize: vertical;
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+
+.botoes{
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+}
+
+button{
+
+    padding: 10px 22px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: .3s;
+
+}
+
+button[type="submit"]{
+
+    background: #198754;
+    color: white;
+
+}
+
+button[type="submit"]:hover{
+
+    background: #157347;
+
+}
+
+button[type="reset"]{
+
+    background: #dc3545;
+    color: white;
+
+}
+
+button[type="reset"]:hover{
+
+    background: #bb2d3b;
+
+}
+
+    id="d9pq7n"
+
+/* ===========================
+   MENSAGENS DE ERRO
+=========================== */
+
+.erro{
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+    min-height: 18px;
+}
+
+/* ===========================
+   CAMPOS VÁLIDOS E INVÁLIDOS
+=========================== */
+
+.valido{
+    border: 2px solid #198754 !important;
+}
+
+.invalido{
+    border: 2px solid #dc3545 !important;
+}
+
+/* ===========================
+   INDICADOR DE FORÇA DA SENHA
+=========================== */
+
+#forcaSenha{
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* ===========================
+   CONTADOR DA MENSAGEM
+=========================== */
+
+#contadorMensagem{
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+/* ===========================
+   PREVIEW DA IMAGEM
+=========================== */
+
+#preview{
+    display: none;
+    margin-top: 15px;
+    max-width: 220px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* ===========================
+   RADIO E CHECKBOX
+=========================== */
+
+input[type="radio"],
+input[type="checkbox"]{
+    width: auto;
+    margin-right: 6px;
+}
+
+fieldset label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ===========================
+   BOTÃO MOSTRAR SENHA
+=========================== */
+
+#mostrarSenha{
+    margin-top: 10px;
+    width: fit-content;
+    background-color: #0d6efd;
+    color: white;
+}
+
+#mostrarSenha:hover{
+    background-color: #0b5ed7;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+@media (max-width:768px){
+
+    body{
+        padding:20px;
+    }
+
+    form{
+        padding:20px;
+    }
+
+    .botoes{
+        flex-direction:column;
+    }
+
+    button{
+        width:100%;
+    }
+
+}
